@@ -1,0 +1,42 @@
+﻿@model List<Miniproyecto_BertoniSolutions.Models.Comment>
+
+@{ Layout = null; }
+
+@if (Model != null && Model.Count() > 0)
+{
+<table style="table-layout: fixed; width: 250px;">
+    <tr>
+        <th style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+            Id
+        </th>
+        <th style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+            Nombre
+        </th>
+        <th style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+            Email
+        </th>
+        <th style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+            Cuerpo
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+        @Html.DisplayFor(modelItem => item.id)
+    </td>
+    <td style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td style="border: 1px solid black; width: 100px; word-wrap: break-word;">
+        @Html.DisplayFor(modelItem => item.body)
+    </td>
+</tr>}
+</table> }
+            else
+            {
+<p>No se encontraron resultados</p>}
